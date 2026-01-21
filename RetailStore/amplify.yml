@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd RetailStore
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: RetailStore/build   # or wherever your build output is
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - RetailStore/node_modules/**/* 
